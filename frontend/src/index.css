@@ -1,3 +1,8 @@
+* {
+  margin: 0;
+  padding: 0;
+  /* box-sizing: unset; */
+}
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -13,11 +18,32 @@ body {
 } */
 
 header {
-  background-color: #404040;
+  /* background-color: #404040; */
+  background-color: #90ee90;
+
   padding: 1rem; /* 1rem= 16px */
 }
 header a {
   color: #ffffff;
   font-weight: bold;
+  font-size: larger;
   text-decoration: none;
+}
+
+/* For featurd products below products */
+main {
+  padding: 1rem;
+}
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.product {
+  border: 1px solid #404040;
+  margin: 1rem;
+}
+.product img {
+  width: 100%;
+  max-width: 400px;
 }
