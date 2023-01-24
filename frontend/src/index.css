@@ -19,8 +19,9 @@ body {
 
 header {
   /* background-color: #404040; */
-  background-color: #90ee90;
+  /* background-color: #90ee90;  */
 
+  background-color: #3a9943;
   padding: 1rem; /* 1rem= 16px */
 }
 header a {
@@ -46,4 +47,14 @@ main {
 .product img {
   width: 100%;
   max-width: 400px;
+}
+.product-info {
+  margin: 1rem;
+  padding: 1rem;
+}
+#addTocart {
+  color: #ffffff;
+  background-color: #3a9943;
+  margin: 0.1rem;
+  border-radius: 0.2rem;
 }
