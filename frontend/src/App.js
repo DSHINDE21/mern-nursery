@@ -7,7 +7,7 @@ function App() {
     <BrowserRouter>
       <div>
         <header>
-          <Link to="/"> nursery</Link> {/* root link to app itself  */}
+          <Link to="/"> SHOP </Link> {/* root link to app itself  */}
         </header>
 
         {/* <main>list products</main> */}
