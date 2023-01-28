@@ -44,6 +44,14 @@ main {
 
   /* padding: 1rem; */
 }
+.heading {
+  font-size: 2rem;
+  /* color: #444; */
+  padding-left: 1rem;
+  border-left: 0.4rem solid #90ee90;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
 .products {
   display: flex;
   flex-wrap: wrap;
@@ -61,9 +69,17 @@ main {
   margin: 1rem;
   padding: 1rem;
 }
-#addTocart {
+.card {
+  font-family: 'Roboto', sans-serif;
+  box-shadow: 2px black;
+  /* border: 2px solid red; */
+}
+.btn-primary {
   color: #ffffff;
   background-color: #3a9943;
-  margin: 0.1rem;
-  border-radius: 0.2rem;
+  /* box-shadow: 3px 3px red; */
+}
+/* rating star color to gold  */
+.rating span {
+  color: #ffc000;
 }
