@@ -1,7 +1,7 @@
 * {
   margin: 0;
   padding: 0;
-  /* box-sizing: unset; */
+  box-sizing: border-box;
 }
 body {
   margin: 0;
@@ -12,28 +12,37 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* flexing setting min height  */
+.site-container {
+  min-height: 100vh;
+  /* this allocated min height to our content section , webpage is divided into 3 parts nav,content,footer  */
+}
 /* code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 } */
 
+/*
 header {
   /* background-color: #404040; */
-  /* background-color: #90ee90;  */
+/* background-color: #90ee90;  */
 
-  background-color: #3a9943;
-  padding: 1rem; /* 1rem= 16px */
-}
+/* background-color: #3a9943; */
+/* padding: 1rem; 1rem= 16px */
+/* } */
+/*
 header a {
   color: #ffffff;
   font-weight: bold;
   font-size: larger;
   text-decoration: none;
-}
+} */
 
 /* For featurd products below products */
 main {
-  padding: 1rem;
+  flex: 1;
+
+  /* padding: 1rem; */
 }
 .products {
   display: flex;
