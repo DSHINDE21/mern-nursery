@@ -8,6 +8,8 @@ import Col from 'react-bootstrap/Col';
 
 import Product from '../components/Product';
 import { Helmet } from 'react-helmet-async';
+import LoadingBox from '../components/LoadingBox';
+import MessageBox from '../components/MessageBox';
 
 // Reducer function to reduce complexities
 // It Replaces useState
@@ -100,9 +102,11 @@ function HomeScreen() {
         {/* Using map function  */}
         {/* data.prosucts.map is removed because we using backenf to fetch data */}
         {loading ? (
-          <div>Loading...</div>
+          // <div>Loading...</div>
+          <LoadingBox />
         ) : error ? (
-          <div>{error}</div>
+          // <div>{error}</div>
+          <MessageBox variant="danger">{error}</MessageBox>
         ) : (
           <Row>
             {
