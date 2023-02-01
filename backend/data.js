@@ -20,7 +20,7 @@ const data = {
       category: 'Plants For House',
       image: '/images/cat2.jpg', //679 px * 829px
       price: 120,
-      countInStock: 10,
+      countInStock: 0,
       brand: 'x',
       rating: 4.5,
       numReviews: 10,
@@ -43,25 +43,25 @@ const data = {
       slug: 'p4', //slug act as a unique key
       category: 'Gift Plants',
       image: '/images/cat4.jpg', //679 px * 829px
-      price: 120,
+      price: 150,
       countInStock: 10,
       brand: 'x',
       rating: 4.5,
       numReviews: 10,
       description: 'high quality plant',
     },
-    {
-      name: 'plant',
-      slug: 'p5', //slug act as a unique key
-      category: 'indoor',
-      image: '/images/p1.jpg', //679 px * 829px
-      price: 120,
-      countInStock: 10,
-      brand: 'x',
-      rating: 4.5,
-      numReviews: 10,
-      description: 'high quality plant',
-    },
+    //   {
+    //     name: 'plant',
+    //     slug: 'p5', //slug act as a unique key
+    //     category: 'indoor',
+    //     image: '/images/p1.jpg', //679 px * 829px
+    //     price: 120,
+    //     countInStock: 10,
+    //     brand: 'x',
+    //     rating: 4.5,
+    //     numReviews: 10,
+    //     description: 'high quality plant',
+    //   },
   ],
 };
 
