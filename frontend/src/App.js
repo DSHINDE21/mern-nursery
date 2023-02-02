@@ -8,7 +8,7 @@ import { LinkContainer } from 'react-router-bootstrap';
 import Badge from 'react-bootstrap/esm/Badge';
 import { useContext } from 'react';
 import { Store } from './Store';
-
+import CartScreen from './screens/CartScreen';
 function App() {
   //AddToCart Handler, it is a function to add item to a cart
   const { state } = useContext(Store);
@@ -48,6 +48,8 @@ function App() {
             <Routes>
               <Route path="/" element={<HomeScreen />} />
               <Route path="/product/:slug" element={<ProductScreen />} />
+
+              <Route path="/cart" element={<CartScreen />} />
             </Routes>
           </Container>
         </main>

@@ -2,7 +2,7 @@ import axios from 'axios';
 import { useContext, useEffect, useReducer } from 'react';
 import Col from 'react-bootstrap/esm/Col';
 import Row from 'react-bootstrap/esm/Row';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import ListGroup from 'react-bootstrap/ListGroup';
 import Rating from '../components/Rating';
 import Card from 'react-bootstrap/Card';
@@ -30,6 +30,8 @@ const reducer = (state, action) => {
 function ProductScreen() {
   <div>ProductScreen</div>;
 
+  // navigate
+  const navigate = useNavigate();
   //Using hook to get unique key
   const params = useParams();
   const { slug } = params;
@@ -76,6 +78,8 @@ function ProductScreen() {
       type: 'CART_ADD_ITEM',
       payload: { ...product, quantity },
     });
+    // redirect user to CartScreen using Navigate function coming from hook through react-router-dom
+    navigate('/cart');
   };
   return (
     // <div>
