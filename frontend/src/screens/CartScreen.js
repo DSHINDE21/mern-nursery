@@ -7,7 +7,7 @@ import MessageBox from '../components/MessageBox';
 import ListGroup from 'react-bootstrap/ListGroup';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 export default function CartScreen() {
@@ -15,7 +15,8 @@ export default function CartScreen() {
   const {
     cart: { cartItems },
   } = state;
-
+  // navigate
+  const navigate = useNavigate();
   //updateCart function
   const updateCartHandler = async (item, quantity) => {
     const { data } = await axios.get(`/api/products/${item._id}`);
@@ -33,6 +34,9 @@ export default function CartScreen() {
     ctxDispatch({ type: 'CART_REMOVE_ITEM', payload: item });
   };
 
+  const checkoutHandler = () => {
+    navigate('/signin?redirect=/shipping');
+  };
   return (
     <div>
       <Helmet>
@@ -114,6 +118,7 @@ export default function CartScreen() {
                       type="button"
                       variant="primary"
                       disabled={cartItems.length === 0}
+                      onClick={checkoutHandler}
                       // If no item in cartItem button disable
                     >
                       Proceed to Checkout
