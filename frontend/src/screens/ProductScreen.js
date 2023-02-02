@@ -59,10 +59,22 @@ function ProductScreen() {
 
   //AddToCart Handler, it is a function to add item to a cart
   const { state, dispatch: ctxDispatch } = useContext(Store);
-  const addToCartHandler = () => {
+
+  const { cart } = state;
+  const addToCartHandler = async () => {
+    //count
+    const existItem = cart.cartItems.find((x) => x._id === product._id);
+    //if exists cnt+1
+    const quantity = existItem ? existItem.quantity + 1 : 1;
+    //Ajax req
+    const { data } = await axios.get(`/api/products/${product._id}`);
+    if (data.countInStock < quantity) {
+      window.alert('Sorry. Product is out of stock');
+      return;
+    }
     ctxDispatch({
       type: 'CART_ADD_ITEM',
-      payload: { ...product, quantity: 1 },
+      payload: { ...product, quantity },
     });
   };
   return (

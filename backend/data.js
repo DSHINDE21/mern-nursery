@@ -2,6 +2,7 @@
 const data = {
   products: [
     {
+      _id: '1',
       name: 'plant',
       slug: 'p1', //slug act as a unique key
       // category: 'indoor',
@@ -15,6 +16,7 @@ const data = {
       description: 'high quality plant',
     },
     {
+      _id: '2',
       name: 'plant',
       slug: 'p2', //slug act as a unique key
       category: 'Plants For House',
@@ -27,6 +29,7 @@ const data = {
       description: 'high quality plant',
     },
     {
+      _id: '3',
       name: 'plant',
       slug: 'p3', //slug act as a unique key
       category: 'Plants For Office',
@@ -39,6 +42,7 @@ const data = {
       description: 'high quality plant',
     },
     {
+      _id: '4',
       name: 'plant',
       slug: 'p4', //slug act as a unique key
       category: 'Gift Plants',
