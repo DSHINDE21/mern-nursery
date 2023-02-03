@@ -2,6 +2,8 @@ import express from 'express';
 import data from './data.js';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
+import seedRouter from './routes/seedRoutes.js';
+import productRouter from './routes/productRoute.js';
 
 dotenv.config();
 
@@ -16,10 +18,16 @@ mongoose
   });
 const app = express();
 
-app.get('/api/products', (req, res) => {
-  res.send(data.products);
-});
+app.use('/api/seed', seedRouter);
+app.use('/api/products', productRouter);
 
+//Below codes is cut and modified in order to perform mongoDB saving in productRoute.js
+
+// app.get('/api/products', (req, res) => {
+//   res.send(data.products);
+// });
+
+/*
 //Backend api to return priduct based on value of slug of product
 app.get('/api/products/slug/:slug', (req, res) => {
   const product = data.products.find((x) => x.slug === req.params.slug);
@@ -39,6 +47,7 @@ app.get('/api/products/:id', (req, res) => {
     res.status(404).send({ message: 'Product Not Found' });
   }
 });
+*/
 
 //define port
 const port = process.env.PORT || 5000;

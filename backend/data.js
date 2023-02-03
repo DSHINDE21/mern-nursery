@@ -1,9 +1,24 @@
+import bcrypt from 'bcryptjs'; //to encrypt
 // creating object data
 const data = {
+  users: [
+    {
+      name: 'Basir',
+      email: 'admin@example.com',
+      password: bcrypt.hashSync('123456'),
+      isAdmin: true,
+    },
+    {
+      name: 'John',
+      email: 'user@example.com',
+      password: bcrypt.hashSync('123456'),
+      isAdmin: false,
+    },
+  ],
   products: [
     {
-      _id: '1',
-      name: 'plant',
+      // _id: '1', as id will come from mongoDb
+      name: 'plant1',
       slug: 'p1', //slug act as a unique key
       // category: 'indoor',
       category: 'Bonsai',
@@ -16,8 +31,8 @@ const data = {
       description: 'high quality plant',
     },
     {
-      _id: '2',
-      name: 'plant',
+      // _id: '2',
+      name: 'plant2',
       slug: 'p2', //slug act as a unique key
       category: 'Plants For House',
       image: '/images/cat2.jpg', //679 px * 829px
@@ -29,8 +44,8 @@ const data = {
       description: 'high quality plant',
     },
     {
-      _id: '3',
-      name: 'plant',
+      // _id: '3',
+      name: 'plant3',
       slug: 'p3', //slug act as a unique key
       category: 'Plants For Office',
       image: '/images/cat3.jpg', //679 px * 829px
@@ -42,8 +57,8 @@ const data = {
       description: 'high quality plant',
     },
     {
-      _id: '4',
-      name: 'plant',
+      // _id: '4',
+      name: 'plant4',
       slug: 'p4', //slug act as a unique key
       category: 'Gift Plants',
       image: '/images/cat4.jpg', //679 px * 829px
