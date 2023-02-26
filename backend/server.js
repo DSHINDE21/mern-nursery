@@ -4,8 +4,10 @@ import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import seedRouter from './routes/seedRoutes.js';
 import productRouter from './routes/productRoute.js';
+import userRouter from './routes/userRoutes.js';
 
 dotenv.config();
+mongoose.set('strictQuery', false);
 
 //loading connection string from .env MONGODB_URI
 mongoose
@@ -18,8 +20,13 @@ mongoose
   });
 const app = express();
 
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
 app.use('/api/seed', seedRouter);
 app.use('/api/products', productRouter);
+
+app.use('/api/users', userRouter);
 
 //Below codes is cut and modified in order to perform mongoDB saving in productRoute.js
 
@@ -48,6 +55,11 @@ app.get('/api/products/:id', (req, res) => {
   }
 });
 */
+
+//To handle error of express-async-handler
+app.use((err, req, res, next) => {
+  res.status(500).send({ message: err.message });
+});
 
 //define port
 const port = process.env.PORT || 5000;

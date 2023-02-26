@@ -25,6 +25,7 @@ function App() {
                   SHOP
                 </Navbar.Brand>
               </LinkContainer>
+
               <Nav className="me-auto">
                 <Link to="/cart" className="nav-link">
                   Cart
