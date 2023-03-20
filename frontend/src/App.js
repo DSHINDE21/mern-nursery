@@ -18,6 +18,7 @@ import ShippingAddressScreen from './screens/ShippingAddressScreen';
 import PaymentMethodScreen from './screens/PaymentMethodScreen';
 import PlaceOrderScreen from './screens/PlaceOrderScreen';
 import OrderScreen from './screens/OrderScreen';
+import ProfileScreen from './screens/ProfileScreen';
 
 function App() {
   //AddToCart Handler, it is a function to add item to a cart
@@ -30,6 +31,7 @@ function App() {
     localStorage.removeItem('userInfo');
     localStorage.removeItem('shippingAddress');
     localStorage.removeItem('paymentMethod');
+    window.location.href = '/signin';
   };
   return (
     <BrowserRouter>
@@ -100,6 +102,8 @@ function App() {
               <Route path="/signin" element={<SigninScreen />} />
 
               <Route path="/signup" element={<SignupScreen />} />
+
+              <Route path="/profile" element={<ProfileScreen />} />
 
               <Route
                 path="/shipping"
