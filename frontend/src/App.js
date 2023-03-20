@@ -17,6 +17,7 @@ import SignupScreen from './screens/SignupScreen';
 import ShippingAddressScreen from './screens/ShippingAddressScreen';
 import PaymentMethodScreen from './screens/PaymentMethodScreen';
 import PlaceOrderScreen from './screens/PlaceOrderScreen';
+import OrderScreen from './screens/OrderScreen';
 
 function App() {
   //AddToCart Handler, it is a function to add item to a cart
@@ -108,6 +109,8 @@ function App() {
               <Route path="/payment" element={<PaymentMethodScreen />}></Route>
 
               <Route path="/placeorder" element={<PlaceOrderScreen />} />
+
+              <Route path="/order/:id" element={<OrderScreen />}></Route>
             </Routes>
           </Container>
         </main>
