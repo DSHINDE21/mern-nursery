@@ -5,6 +5,7 @@ import dotenv from 'dotenv';
 import seedRouter from './routes/seedRoutes.js';
 import productRouter from './routes/productRoute.js';
 import userRouter from './routes/userRoutes.js';
+import orderRouter from './routes/orderRoutes.js';
 
 dotenv.config();
 mongoose.set('strictQuery', false);
@@ -28,6 +29,7 @@ app.use('/api/products', productRouter);
 
 app.use('/api/users', userRouter);
 
+app.use('/api/orders', orderRouter);
 //Below codes is cut and modified in order to perform mongoDB saving in productRoute.js
 
 // app.get('/api/products', (req, res) => {
